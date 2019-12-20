@@ -16,7 +16,7 @@
             }
 
             function verifyToken(tokenValue) {
-                $.get('http://localhost:8081/mobile-app-ws/users/email-verification', {token: tokenValue})
+                $.get('http://ec2-52-59-187-214.eu-central-1.compute.amazonaws.com:8080/mobile-app-ws/users/email-verification', {token: tokenValue})
                 .done(function (response) {
 
                     console.log(response);
@@ -28,8 +28,8 @@
                         $("#successful-result").attr("style", "display: block !important");
 
                     } else {
-                        console.log("FAILING")
 
+                        console.log("FAILING")
                         $("#successful-result").attr("style", "display: none !important");
                         $("#not-successful-result").attr("style", "display: block !important");
 
